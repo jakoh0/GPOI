@@ -92,3 +92,46 @@ footer {
     text-align: center;
     color: #999;
 }
+
+.soci-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-top:5%;
+}
+
+.socio {
+    background: #1c1c1c;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.socio:hover {
+    cursor:pointer;
+}
+
+.socio img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #ffd700;
+}
+
+.socio h3 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+    color: #ffd700;
+}
+
+.socio p {
+    font-size: 1rem;
+    color: #ccc;
+}
