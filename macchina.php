@@ -28,7 +28,13 @@
         <p><strong>Anno:</strong> 2023</p>
         <p><strong>Prezzo leasing:</strong> €2.300/mese</p>
         <p><strong>Caratteristiche:</strong> Cambio automatico, interni in pelle, GPS integrato, accelerazione 0-100 in 3,4s.</p>
-        <a href="prenota.php?id=1" class="btn" style="margin-top: 1rem;">Prenota Ora</a>
+        <form method="post"><button class="btn"name="prenota" type="submit" value="prenota">Prenota ora</button></form>
+
+        <?php
+          if(isset($_POST["prenota"])){
+            header("Location: prenotazione.php");
+          }
+        ?>
       </div>
     </div>
   </section>
