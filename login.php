@@ -42,7 +42,7 @@ if (isset($_POST["invio"])) {
         $row = mysqli_fetch_row($result);
         $_SESSION["utente"] = $row[0];
         mysqli_close($conn);
-        header("Location: carrello.php");
+        header("Location: pag1.html");
         exit;
     } else {
         echo "<p style='text-align:center; color: #f00;'>Utente non trovato. Prova a registrarti prima.</p>";

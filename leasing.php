@@ -8,20 +8,24 @@
   <link rel="stylesheet" href="style1.css">
 </head>
 <body>
+
   <header>
     <h1>Offerta Noleggio & Leasing</h1>
   </header>
   <nav>
-  <div class="idux">
+  <div class="indux">
     <a href="index.html"><img src="img/logo.png"></a>
   </div>
+  <form method="post">
   <section class="section">
+
     <div class="car-grid">
-      <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
-        <img src="immagine-auto.jpg" alt="Auto di lusso">
-        <h3>Nome dell'Auto</h3>
-        <p>Descrizione breve o dettagli opzionali.</p>
+            <button name="car" type="submit" value="Lamborghini Aventador">
+                <img src="img/Lamborghini Aventador.png" alt="Lamborghini Aventador">
+                <h3>Nome dell'Auto</h3>
+                <p>Descrizione breve o dettagli opzionali.</p>
+            </button>
       </div>
       <!-- Copia e incolla sopra per aggiungere più auto -->
     </div>
@@ -29,36 +33,67 @@
     <div class="car-grid">
       <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
-        <img src="immagine-auto.jpg" alt="Auto di lusso">
-        <h3>Nome dell'Auto</h3>
-        <p>Descrizione breve o dettagli opzionali.</p>
+        <button name="car" type="submit" value="Ford Mustang">
+                <img src="img/Ford Mustang.png" alt="Ford Mustang">
+                <h3>Ford Mustang</h3>
+                <p>Descrizione breve o dettagli opzionali.</p>
+            </button>
       </div>
       <!-- Copia e incolla sopra per aggiungere più auto -->
     </div>
 
-    <div class="car-grid">
+    <div class="car-grid"> 
       <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
-        <img src="immagine-auto.jpg" alt="Auto di lusso">
-        <h3>Nome dell'Auto</h3>
-        <p>Descrizione breve o dettagli opzionali.</p>
+        <button name="car" type="submit" value="AUDI RS3">
+                <img src="img/AUDI RS3.png" alt="AUDI RS3">
+                <h3>AUDI RS3</h3>
+                <p>Descrizione breve o dettagli opzionali.</p>
+            </button>
       </div>
       <!-- Copia e incolla sopra per aggiungere più auto -->
     </div>
 
-    <div class="car-grid">
+     <div class="car-grid"> 
       <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
-        <img src="immagine-auto.jpg" alt="Auto di lusso">
-        <h3>Nome dell'Auto</h3>
-        <p>Descrizione breve o dettagli opzionali.</p>
+        <button name="car" type="submit" value="Porche Carera 911">
+                <img src="img/Porche Carera 911.png" alt="Porche Carera 911">
+                <h3>Porche Carera 911</h3>
+                <p>Descrizione breve o dettagli opzionali.</p>
+            </button>
       </div>
       <!-- Copia e incolla sopra per aggiungere più auto -->
     </div>
+
+     <div class="car-grid"> 
+      <!-- Inizia qui il blocco auto da replicare -->
+      <div class="car-card">
+        <button name="car" type="submit" value="Lamborghini Urus">
+                <img src="img/Lamborghini Urus.png" alt="Lamborghini Urus">
+                <h3>Lamborghini Urus</h3>
+                <p>Descrizione breve o dettagli opzionali.</p>
+            </button>
+      </div>
+      <!-- Copia e incolla sopra per aggiungere più auto -->
+    </div>
+    
   </section>
+  </form>
+  <?php
+    session_start();
+    if(isset($_POST["car"])){
+        $_SESSION["macchina"]=$_POST["car"];
+        echo $_POST["car"];
+        header("Location: macchina.php");
+
+    }
+  ?>
 
   <footer>
     &copy; 2025 JTL LuxeRent. Tutti i diritti riservati.
   </footer>
 </body>
 </html>
+
+
