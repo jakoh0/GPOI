@@ -29,7 +29,9 @@
       <div style="flex: 1; min-width: 300px;">
         <img src="<?php echo "img/".$_SESSION["macchina"].".png";?>" alt="Nome Auto" style="width: 100%; border-radius: 12px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);">
       </div>
-
+      <div class="indux">
+        <a href="pag1.html"><img src="img/logo.png"></a>
+      </div>
       <!-- Info auto -->
 
       <div style="flex: 1; min-width: 300px;">

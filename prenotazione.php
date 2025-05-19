@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="indux">
+      <a href="pag1.html"><img src="img/logo.png"></a>
+    </div>
   <section class="section" style="max-width: 600px; margin: 0 auto;">
     <h2>Prenotazione Veicolo</h2>
 
