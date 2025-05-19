@@ -14,7 +14,7 @@
   </header>
   <nav>
   <div class="indux">
-    <a href="index.html"><img src="img/logo.png"></a>
+    <a href="pag1.html"><img src="img/logo.png"></a>
   </div>
   <form method="post">
   <section class="section">

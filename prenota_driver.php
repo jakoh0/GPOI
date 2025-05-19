@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="indux">
+        <a href="pag1.html"><img src="img/logo.png"></a>
+    </div>
   <section class="section" style="max-width: 600px; margin: 0 auto;">
     <h3 style="margin-top:-5%; margin-bottom:-1%;">Prenotazione Driver Personale</h3>
 
@@ -27,12 +30,15 @@
         $res = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($res) === 0) {
-          echo "<option disabled>Nessun driver disponibile</option>";
-        } else {
-          while ($row = mysqli_fetch_assoc($res)) {
-            echo "<option value='{$row['id']}'>{$row['nome']} - {$row['email']}</option>";
-          }
-        }
+        echo "<option disabled>Nessun driver disponibile</option>";
+      } else {
+      while ($row = mysqli_fetch_assoc($res)) {
+        $nome = htmlspecialchars($row['nome']);
+        $costo = number_format($row['costo_giornaliero'], 2, ',', '.');
+        echo "<option value='{$row['id']}'>$nome - €$costo/giorno</option>";
+      }
+}
+
         ?>
       </select>
 

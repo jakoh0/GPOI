@@ -71,8 +71,8 @@ footer {
 }
 
 .indux{
-    position: absolute;
-    top: 5px;
+    position: fixed;
+    top: 10px;
     margin-left:1%;
     width: 100%;
 }

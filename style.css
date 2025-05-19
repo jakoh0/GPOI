@@ -175,3 +175,17 @@ footer {
   max-width: 400px;
   margin: 0 auto;
 }
+.indux{
+    position: fixed;
+    top: 10px;
+    margin-left:1%;
+    width: 100%;
+}
+
+
+.indux>a>img{
+    width: 10%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color:white
+}
