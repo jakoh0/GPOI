@@ -15,7 +15,7 @@ body {
 
 header {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('luxury-car.jpg') no-repeat center center/cover;
-    height: 100vh;
+    height: 87vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -158,4 +158,20 @@ footer {
     padding: 2rem;
     text-align: center;
     color: #999;
+}
+
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
 }

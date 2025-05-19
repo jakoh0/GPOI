@@ -79,22 +79,8 @@ CREATE TABLE `utenti` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
-  `telefono` varchar(20) DEFAULT NULL,
-  `data_creazione` datetime DEFAULT current_timestamp()
+  `telefono` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
-/*
-  CREATE TABLE prenotazioni (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  veicolo_id INT NOT NULL,
-  utente_nome VARCHAR(50) NOT NULL,
-  data_inizio DATE NOT NULL,
-  data_fine DATE NOT NULL,
-  note TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-*/
 
 
 --

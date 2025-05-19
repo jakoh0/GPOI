@@ -10,38 +10,43 @@
 <body>
   <section class="section">
     <h2>Crea un nuovo account</h2>
-    <form method="post" style="max-width: 400px; margin: 0 auto;">
-      <input type="text" name="nome" placeholder="Nome utente" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: none;">
-      <input type="password" name="pwd" placeholder="Password" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: none;">
-      <input type="submit" name="invio" value="Registrati" class="btn" style="width: 100%;">
+    <form method="post" class="form-container">
+      <input type="text" name="nome" placeholder="Nome utente" required class="form-input">
+      <input type="password" name="pwd" placeholder="Password" required class="form-input">
+      <input type="email" name="email" placeholder="Email" required class="form-input">
+      <input type="tel" name="numero" placeholder="Numero di telefono" required class="form-input">
+      <input type="submit" name="invio" value="Registrati" class="btn">
     </form>
   </section>
 </body>
 
 <?php
 if (isset($_POST["invio"])) {
-    if (!isset($_POST["nome"]) || trim($_POST["nome"]) == "") {
-        die("<p style='text-align:center;color:#f00;'>Inserisci correttamente il nome</p>");
-    }
-    if (!isset($_POST["pwd"]) || trim($_POST["pwd"]) == "") {
-        die("<p style='text-align:center;color:#f00;'>Inserisci correttamente la password</p>");
+    $nome = trim($_POST["nome"]);
+    $pwd = trim($_POST["pwd"]);
+    $email = trim($_POST["email"]);
+    $numero = trim($_POST["numero"]);
+
+    if ($nome == "" || $pwd == "" || $email == "" || $numero == "") {
+        die("<p style='text-align:center;color:#f00;'>Compila tutti i campi</p>");
     }
 
-    $conn = mysqli_connect("localhost", "root", "", "5AIT_Super");
-    $user = $_POST["nome"];
-    $pwd = $_POST["pwd"];
+    $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
     $password = md5($pwd);
 
-    $sql = "SELECT * FROM utenti WHERE nome = '$user' AND password = '$password'";
+    $sql = "SELECT * FROM utenti WHERE nome = '$nome' OR email = '$email'";
     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     if (mysqli_num_rows($result) > 0) {
-        echo "<p style='text-align:center;color:#ffcc00;'>Account già esistente</p>";
+        echo "<p style='text-align:center;color:#ffcc00;'>Utente o email già registrati</p>";
     } else {
-        $sql = "INSERT INTO utenti(nome,password) VALUES ('$user','$password')";
+        $sql = "INSERT INTO utenti (nome, password_hash, email, telefono) 
+                VALUES ('$nome', '$password', '$email', '$numero')";
         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         echo "<p style='text-align:center;color:#0f0;'>Registrazione completata con successo</p>";
         mysqli_close($conn);
+        sleep(2);
+        header("Location: index.html");
     }
 }
 ?>

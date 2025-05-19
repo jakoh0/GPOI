@@ -23,59 +23,48 @@
       <div class="car-card">
             <button name="car" type="submit" value="Lamborghini Aventador">
                 <img src="img/Lamborghini Aventador.png" alt="Lamborghini Aventador">
-                <h3>Nome dell'Auto</h3>
-                <p>Descrizione breve o dettagli opzionali.</p>
+                <h3>Lamborghini Aventador</h3>
             </button>
       </div>
-      <!-- Copia e incolla sopra per aggiungere più auto -->
     </div>
 
     <div class="car-grid">
-      <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
         <button name="car" type="submit" value="Ford Mustang">
                 <img src="img/Ford Mustang.png" alt="Ford Mustang">
                 <h3>Ford Mustang</h3>
-                <p>Descrizione breve o dettagli opzionali.</p>
             </button>
       </div>
-      <!-- Copia e incolla sopra per aggiungere più auto -->
     </div>
 
     <div class="car-grid"> 
-      <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
         <button name="car" type="submit" value="AUDI RS3">
                 <img src="img/AUDI RS3.png" alt="AUDI RS3">
                 <h3>AUDI RS3</h3>
-                <p>Descrizione breve o dettagli opzionali.</p>
             </button>
       </div>
-      <!-- Copia e incolla sopra per aggiungere più auto -->
+
     </div>
 
      <div class="car-grid"> 
-      <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
         <button name="car" type="submit" value="Porche Carera 911">
                 <img src="img/Porche Carera 911.png" alt="Porche Carera 911">
                 <h3>Porche Carera 911</h3>
-                <p>Descrizione breve o dettagli opzionali.</p>
             </button>
       </div>
-      <!-- Copia e incolla sopra per aggiungere più auto -->
+
     </div>
 
      <div class="car-grid"> 
-      <!-- Inizia qui il blocco auto da replicare -->
       <div class="car-card">
         <button name="car" type="submit" value="Lamborghini Urus">
                 <img src="img/Lamborghini Urus.png" alt="Lamborghini Urus">
                 <h3>Lamborghini Urus</h3>
-                <p>Descrizione breve o dettagli opzionali.</p>
             </button>
       </div>
-      <!-- Copia e incolla sopra per aggiungere più auto -->
+
     </div>
     
   </section>
@@ -96,4 +85,3 @@
 </body>
 </html>
 
- aggioranre registrazione con + campi

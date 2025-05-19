@@ -1,5 +1,16 @@
 <?php
-    session_start();
+  session_start();
+  $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+  $car = $_SESSION["macchina"];
+  $sql ="SELECT * FROM automobili WHERE marca = '$car'";
+  $result = mysqli_query($conn, $sql);
+ 
+  $row = mysqli_fetch_assoc($result);
+  $_SESSION["idcar"]= $row["id"];
+  $marca= $row["marca"];
+  $anno= $row["anno"];
+  $prezzo= $row["prezzo_giornaliero"];
+  $descrizione= $row["descrizione"];
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -23,11 +34,10 @@
 
       <div style="flex: 1; min-width: 300px;">
         <h3 style="color: #ffd700;">Nome Auto</h3>
-        <p><strong>Marca:</strong> <?php echo $_SESSION["macchina"]; ?></p>
-        <p><strong>Modello:</strong> Roma</p>
-        <p><strong>Anno:</strong> 2023</p>
-        <p><strong>Prezzo leasing:</strong> €2.300/mese</p>
-        <p><strong>Caratteristiche:</strong> Cambio automatico, interni in pelle, GPS integrato, accelerazione 0-100 in 3,4s.</p>
+        <p><strong>Marca:</strong> <?php echo $marca?></p>
+        <p><strong>Anno:</strong> <?php echo $anno?></p>
+        <p><strong>Prezzo leasing:</strong> <?php echo $prezzo."€"?></p>
+        <p><strong>Caratteristiche:</strong> <?php echo $descrizione?></p>
         <form method="post"><button class="btn"name="prenota" type="submit" value="prenota">Prenota ora</button></form>
 
         <?php

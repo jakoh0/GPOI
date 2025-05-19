@@ -59,25 +59,37 @@
 
 <?php
 if (isset($_POST['invio'])) {
-  $conn = mysqli_connect("localhost", "root", "", "5AIT_Super");
+  session_start();
 
-  $veicolo_id = $_POST['veicolo_id'];
-  $utente = mysqli_real_escape_string($conn, $_POST['utente_nome']);
-  $inizio = $_POST['data_inizio'];
-  $fine = $_POST['data_fine'];
-  $note = mysqli_real_escape_string($conn, $_POST['note']);
+  // Connessione al DB
+  $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+  if (!$conn) {
+    die("Errore di connessione: " . mysqli_connect_error());
+  }
 
-  // Verifica sovrapposizione
+  // Variabili da sessione e form
+  $veicolo_id = $_SESSION["idcar"];
+  $utente_id  = $_SESSION["utente"];
+  $inizio     = $_POST['data_inizio'];
+  $fine       = $_POST['data_fine'];
+
+  // Verifica disponibilità (date sovrapposte)
   $check = "SELECT * FROM prenotazioni 
-            WHERE veicolo_id = '$veicolo_id'
+            WHERE automobile_id = '$veicolo_id'
             AND (data_inizio <= '$fine' AND data_fine >= '$inizio')";
   $check_result = mysqli_query($conn, $check);
 
   if (mysqli_num_rows($check_result) > 0) {
     echo "<p style='text-align:center; color:#f00;'>Il veicolo è già prenotato nelle date selezionate. Scegli un altro periodo.</p>";
   } else {
-    $sql = "INSERT INTO prenotazioni (veicolo_id, utente_nome, data_inizio, data_fine, note)
-            VALUES ('$veicolo_id', '$utente', '$inizio', '$fine', '$note')";
+    // Calcolo opzionale del prezzo (es: 100€/giorno)
+    $giorni = (strtotime($fine) - strtotime($inizio)) / (60 * 60 * 24);
+    $prezzo_giornaliero = 100; 
+
+    // Inserimento prenotazione
+    $sql = "INSERT INTO prenotazioni (utente_id, automobile_id, data_inizio, data_fine)
+            VALUES ('$utente_id', '$veicolo_id', '$inizio', '$fine')";
+    
     if (mysqli_query($conn, $sql)) {
       echo "<p style='text-align:center; color:#0f0;'>Prenotazione confermata!</p>";
     } else {
@@ -88,4 +100,5 @@ if (isset($_POST['invio'])) {
   mysqli_close($conn);
 }
 ?>
+
 </html>
