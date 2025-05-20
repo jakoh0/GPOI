@@ -25,7 +25,7 @@
       <label>Seleziona un Driver:</label>
       <select name="driver_id" class="form-input" required>
         <?php
-        $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+        $conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
         $query = "SELECT * FROM driver WHERE disponibile = 1";
         $res = mysqli_query($conn, $query);
 

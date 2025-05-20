@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `jtl_luxerent`
 --
-CREATE DATABASE IF NOT EXISTS `jtl_luxerent` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `jtl_luxerent`;
+/*CREATE DATABASE IF NOT EXISTS `jtl_luxerent` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `jtl_luxerent`;*/
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`id`, `nome`, `email`, `password_hash`, `telefono`) VALUES
-(1, 'jako', 'jacopo.toffolo@gmail.com', '0c88028bf3aa6a6a143ed846f2be1ea4', '3280221234');
+(1, 'jako', 'prova.prova1@gmail.com', '0c88028bf3aa6a6a143ed846f2be1ea4', '1234567890');
 
 --
 -- Indici per le tabelle scaricate

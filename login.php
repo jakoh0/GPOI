@@ -28,7 +28,7 @@ if (isset($_POST["invio"])) {
         die("Inserisci correttamente la password");
     }
 
-    $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+    $conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
     $user = $_POST["nome"];
     $pwd = $_POST["pwd"];
     $password = md5($pwd);

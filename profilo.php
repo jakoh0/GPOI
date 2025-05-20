@@ -6,7 +6,7 @@ if (!isset($_SESSION['utente'])) {
   exit;
 }
 
-$conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+$conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
 
 $utente_id = $_SESSION["utente"];
 $sql = "SELECT * FROM utenti WHERE id = '$utente_id'";

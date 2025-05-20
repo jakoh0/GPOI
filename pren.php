@@ -8,7 +8,7 @@ if (!isset($_SESSION["utente"])) {
 }
 
 // Connessione DB
-$conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+$conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
 if (!$conn) {
   die("Errore connessione: " . mysqli_connect_error());
 }

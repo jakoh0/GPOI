@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+  $conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
   $car = $_SESSION["macchina"];
   $sql ="SELECT * FROM automobili WHERE marca = '$car'";
   $result = mysqli_query($conn, $sql);

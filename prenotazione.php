@@ -36,7 +36,7 @@
 
     <?php
     if (isset($_GET['id'])) {
-      $conn = mysqli_connect("localhost", "root", "", "5AIT_Super");
+      $conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
       $veicolo_id = $_GET['id'];
 
       $result = mysqli_query($conn, "SELECT data_inizio, data_fine FROM prenotazioni WHERE veicolo_id = '$veicolo_id' ORDER BY data_inizio");

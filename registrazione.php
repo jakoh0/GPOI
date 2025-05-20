@@ -31,7 +31,7 @@ if (isset($_POST["invio"])) {
         die("<p style='text-align:center;color:#f00;'>Compila tutti i campi</p>");
     }
 
-    $conn = mysqli_connect("localhost", "root", "", "jtl_luxerent");
+    $conn = mysqli_connect("localhost", "root", "", "my_jtl_luxerent");
     $password = md5($pwd);
 
     $sql = "SELECT * FROM utenti WHERE nome = '$nome' OR email = '$email'";
