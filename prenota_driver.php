@@ -53,6 +53,21 @@
       <input type="submit" name="invio" value="Conferma Prenotazione" class="btn">
     </form>
 
+    <!-- Script per gestire le date -->
+  <script>
+    const inizioInput = document.querySelector('input[name="data_inizio"]');
+    const fineInput = document.querySelector('input[name="data_fine"]');
+
+    const today = new Date().toISOString().split("T")[0];
+    inizioInput.setAttribute("min", today);
+    fineInput.setAttribute("min", today);
+
+    inizioInput.addEventListener("change", function () {
+      fineInput.value = "";
+      fineInput.setAttribute("min", this.value);
+    });
+  </script>
+
     <?php
     // Mostra prenotazioni esistenti dell'utente
     if (isset($_SESSION['utente'])) {

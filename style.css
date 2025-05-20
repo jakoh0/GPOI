@@ -200,3 +200,27 @@ footer {
       padding: 0.5rem 1.5rem;
       font-size: 0.9rem;
     }
+
+    .table-container {
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1c1c1c;
+      color: #fff;
+      border: 1px solid #444;
+    }
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+    th {
+      background-color: #111;
+      color: #ffd700;
+    }
+    tr:hover {
+      background-color: #2a2a2a;
+    }
